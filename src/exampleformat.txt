@@ -1,0 +1,2 @@
+adminID,first,last,address,phone,1234,status,use,model,year,type,method
+sussybaka123,Jesse,Han,UConn,123-456-7890,5000000,Active,Personal,Toyota,2005,Sedan,New
