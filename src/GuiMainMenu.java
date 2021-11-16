@@ -135,7 +135,7 @@ public class GuiMainMenu extends JFrame implements ActionListener {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         CustomerProfDB db = new CustomerProfDB("src/customers.txt");
         try {
             db.initializeDB("src/customers.txt");
