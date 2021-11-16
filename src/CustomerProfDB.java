@@ -14,6 +14,10 @@ public class CustomerProfDB {
         numCustomers = profiles.size();
     }
 
+    public List<CustomerProf> getCustomerList() {
+        return profiles;
+    }
+
     public void initializeDB(String filename) throws FileNotFoundException {
     	Scanner scan = new Scanner(new File(filename));
     	while (scan.hasNextLine()) { // while there is still data left to be read in the file
