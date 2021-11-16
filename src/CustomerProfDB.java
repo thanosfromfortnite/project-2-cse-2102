@@ -14,6 +14,7 @@ public class CustomerProfDB {
         numCustomers = profiles.size();
     }
 
+    // Returns customer profiles list
     public List<CustomerProf> getCustomerList() {
         return profiles;
     }
