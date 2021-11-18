@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -10,7 +11,10 @@ public class GuiBaseMenuOption extends JFrame implements ActionListener {
     JTextField adminIDTextField, lastNameTextField;
     JLabel headerLabel, adminIDLabel, lastNameLabel, errorLabel;
     GuiMainMenu menu;
-    // Need to add other selection options
+    String[] statusOptions = {"Active", "Inactive"};
+    String[] useOptions = {"Business", "Personal", "Both"};
+    String[] vehicleTypeOptions = {"Sedan", "Hatchback", "Luxury", "Sport", "Other"};
+    String[] methodOptions = {"New", "Certified Pre-Owned", "Used", "Other"};
 
     // GuiBaseMenuOption constructor
     GuiBaseMenuOption(GuiMainMenu mainMenu) {
@@ -28,35 +32,47 @@ public class GuiBaseMenuOption extends JFrame implements ActionListener {
         });
 
         // Set background, color, and size
+        Color c1 = new Color(21, 210, 131);
+        this.getContentPane().setBackground(c1);
+        this.setLayout(null);
+        this.setSize(500, 320);
 
         // Button
-        // Need to add styling
         button = new JButton();
+        button.setBounds(175, 220, 150, 40);
+        button.setFont(new Font("serif", Font.PLAIN, 20));
         button.addActionListener(this);
 
         // Header label
-        // Need to add styling
         headerLabel = new JLabel();
+        headerLabel.setBounds(160, 20, 300, 50);
+        headerLabel.setFont(new Font("serif", Font.PLAIN, 35));
 
         // Admin ID label
-        // Need to add styling
         adminIDLabel = new JLabel("Admin ID: ");
+        adminIDLabel.setBounds(70, 80, 150, 50);
+        adminIDLabel.setFont(new Font("serif", Font.PLAIN, 20));
 
         // Last name label
-        // Need to add styling
         lastNameLabel = new JLabel ("Last Name: ");
+        lastNameLabel.setBounds(70, 130, 150, 50);
+        lastNameLabel.setFont(new Font("serif", Font.PLAIN, 20));
 
         // Admin ID text field
-        // Need to add styling
         adminIDTextField = new JTextField(20);
+        adminIDTextField.setBounds(180, 88, 260, 33);
+        adminIDTextField.setFont(new Font("serif", Font.PLAIN, 20));
 
         // Last name text field
-        // Need to add styling
         lastNameTextField = new JTextField(20);
+        lastNameTextField.setBounds(180, 138, 260, 33);
+        lastNameTextField.setFont(new Font("serif", Font.PLAIN, 20));
 
         // Default error label
-        // Need to add styling
         errorLabel = new JLabel("Customer profile not found.", SwingConstants.CENTER);
+        errorLabel.setBounds(0, 175, 500, 33);
+        errorLabel.setFont(new Font("serif", Font.BOLD, 15));
+        errorLabel.setForeground(Color.red);
 
         // Add components
         this.add(button);
@@ -70,7 +86,7 @@ public class GuiBaseMenuOption extends JFrame implements ActionListener {
         this.setResizable(false);
     }
 
-    // Action handler which subclassees override
+    // Action handler which subclasses override
     public void actionHandler() {}
 
     public void actionPerformed(ActionEvent event) {
