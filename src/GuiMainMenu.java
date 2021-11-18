@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -28,17 +29,22 @@ public class GuiMainMenu extends JFrame implements ActionListener {
         });
 
         // Set background, title, and size
-        // Need to add styling
+        Color c1 = new Color(21, 210, 131);
+        this.getContentPane().setBackground(c1);
         this.setTitle("Main Menu");
+        this.setLayout(null);
+        this.setSize(500, 620);
 
         // Set select button
-        // Need to add styling
         selectButton = new JButton("Select");
+        selectButton.setBounds(10, 500, 150, 40);
+        selectButton.setFont(new Font("serif", Font.PLAIN, 20));
         selectButton.addActionListener(this);
 
         // Set header label
-        // Need to add styling
         JLabel headerLabel = new JLabel("Integrated Customer System");
+        selectButton.setBounds(75, 20, 500, 50);
+        selectButton.setFont(new Font("serif", Font.PLAIN, 35));
 
         // JRadio button menu options
         ButtonGroup buttonGroup = new ButtonGroup();
@@ -50,7 +56,13 @@ public class GuiMainMenu extends JFrame implements ActionListener {
         buttons[5] = new JRadioButton("Exit");
 
         // Set values for menu option buttons
-        // Need to add styling
+        int yInc = 0;
+        for (JRadioButton button : buttons) {
+            button.setBounds(175, 100+yInc, 300, 40);
+            buttonGroup.add(button);
+            this.add(button);
+            yInc += 50;
+        }
 
         // Add components
         this.add(selectButton);
@@ -144,5 +156,4 @@ public class GuiMainMenu extends JFrame implements ActionListener {
             System.out.println("File not found.");
         }
     }
-
 }
