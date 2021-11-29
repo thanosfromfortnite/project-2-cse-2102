@@ -232,8 +232,9 @@ public class GuiCreateProfile extends GuiBaseMenuOption implements ActionListene
         // Create db object
         CustomerProfDB db = new CustomerProfDB("src/customers.txt");
         try {
-            // Initialize db and create profile
+            // Initialize db
             db.initializeDB("src/customers.txt");
+            // Make new create profile screen
             new GuiCreateProfile(new GuiMainMenu(db));
         } catch (FileNotFoundException e) {
             // Catch exception and display file not found
