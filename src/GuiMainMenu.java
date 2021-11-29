@@ -100,11 +100,9 @@ public class GuiMainMenu extends JFrame implements ActionListener {
                 this.setVisible(false);
                 // Display no profiles screen if customer list is empty, else open delete profile screen
                 if (db.getCustomerList().isEmpty()) {
-//                    new GuiNoProfilesMsg(this);
-                    new GuiNoProfilesMsg();
+                    new GuiNoProfilesMsg(this);
                 } else {
-//                    new GuiDeleteProfile(this);
-                    new GuiDeleteProfile();
+                    new GuiDeleteProfile(this);
                 }
                 break;
             case 2:
@@ -112,8 +110,7 @@ public class GuiMainMenu extends JFrame implements ActionListener {
                 this.setVisible(false);
                 // Display no profiles screen if customer list is empty, else open update profile screen
                 if (db.getCustomerList().isEmpty()) {
-//                    new GuiNoProfilesMsg(this);
-                    new GuiNoProfilesMsg();
+                    new GuiNoProfilesMsg(this);
                 } else {
 //                    new GuiUpdateProfile(this);
                     new GuiUpdateProfile();
@@ -124,8 +121,7 @@ public class GuiMainMenu extends JFrame implements ActionListener {
                 this.setVisible(false);
                 // Display no profiles screen if customer list is empty, else open find profile screen
                 if (db.getCustomerList().isEmpty()) {
-//                    new GuiNoProfilesMsg(this);
-                    new GuiNoProfilesMsg();
+                    new GuiNoProfilesMsg(this);
                 } else {
 //                    new GuiFindProfile(this);
                     new GuiFindProfile();
@@ -136,8 +132,7 @@ public class GuiMainMenu extends JFrame implements ActionListener {
                 this.setVisible(false);
                 // Display no profiles screen if customer list is empty, else open display all profiles screen
                 if (db.getCustomerList().isEmpty()) {
-//                    new GuiNoProfilesMsg(this);
-                    new GuiNoProfilesMsg();
+                    new GuiNoProfilesMsg(this);
                 } else {
 //                    new GuiDisplayAllProfilesPrompt(this);
                     new GuiDisplayAllProfilesPrompt();

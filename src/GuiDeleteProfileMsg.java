@@ -1,28 +1,31 @@
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 
-// Allows user to delete customer profile by admin ID and last name
-public class GuiDeleteProfile extends GuiBaseMenuOption implements ActionListener {
+// Message that displays after deleting customer profile
+public class GuiDeleteProfileMsg extends GuiBaseMessage implements ActionListener {
 
-    // GuiDeleteProfile constructor
-    GuiDeleteProfile(GuiMainMenu mainMenu) {
+    // GuiDeleteProfileMsg constructor
+    GuiDeleteProfileMsg(GuiMainMenu mainMenu) {
         // Call parent constructor
         super(mainMenu);
         // Set title
         this.setTitle("Delete Profile");
-        // Set text for button and header label
-        button.setText("Delete");
+        // Set text for button
+        button.setText("Confirm");
+
+        // Header label
         headerLabel.setText("Delete Profile");
+        headerLabel.setBounds(152, 20, 300, 50);
+        headerLabel.setFont(new Font("serif", Font.PLAIN, 35));
+
+        // Successful deletion label
+        messageLabel.setText("Successfully deleted profile");
+        messageLabel.setBounds(185, 100, 150, 50);
+        messageLabel.setFont(new Font("serif", Font.PLAIN, 20));
+
         // Display screen
         this.setVisible(true);
-    }
-
-    @Override
-    public void actionHandler() {
-        // Delete customer profile by admin ID and last name
-        menu.db.deleteProfile(adminIDTextField.getText(), lastNameTextField.getText());
-        // Display delete confirmation
-        new GuiDeleteProfileMsg(menu);
     }
 
     // Test
@@ -33,12 +36,10 @@ public class GuiDeleteProfile extends GuiBaseMenuOption implements ActionListene
             // Initialize db
             db.initializeDB("src/customers.txt");
             // Create new no profiles screen
-            new GuiDeleteProfile(new GuiMainMenu(db));
+            new GuiDeleteProfileMsg(new GuiMainMenu(db));
         } catch (FileNotFoundException e) {
             // Catch exception and display file not found
             System.out.println("File not found");
         }
     }
-
-
 }
