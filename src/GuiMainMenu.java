@@ -37,14 +37,14 @@ public class GuiMainMenu extends JFrame implements ActionListener {
 
         // Set select button
         selectButton = new JButton("Select");
-        selectButton.setBounds(10, 500, 150, 40);
+        selectButton.setBounds(175, 450, 150, 40);
         selectButton.setFont(new Font("serif", Font.PLAIN, 20));
         selectButton.addActionListener(this);
 
         // Set header label
         JLabel headerLabel = new JLabel("Integrated Customer System");
-        selectButton.setBounds(75, 20, 500, 50);
-        selectButton.setFont(new Font("serif", Font.PLAIN, 35));
+        headerLabel.setBounds(50, 20, 500, 50);
+        headerLabel.setFont(new Font("serif", Font.PLAIN, 35));
 
         // JRadio button menu options
         ButtonGroup buttonGroup = new ButtonGroup();
@@ -58,7 +58,9 @@ public class GuiMainMenu extends JFrame implements ActionListener {
         // Set properties for menu option buttons
         int yInc = 0;
         for (JRadioButton button : buttons) {
-            button.setBounds(175, 100+yInc, 300, 40);
+            button.setBounds(150, 100+yInc, 300, 40);
+            button.setFont(new Font("serif", Font.PLAIN, 22));
+            button.setBackground(null);
             buttonGroup.add(button);
             this.add(button);
             yInc += 50;

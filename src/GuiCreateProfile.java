@@ -36,7 +36,7 @@ public class GuiCreateProfile extends GuiBaseMenuOption implements ActionListene
 
         // Submit button
         button.setText("Submit");
-        button.setBounds(175, 520, 150, 40);
+        button.setBounds(175, 500, 150, 40);
 
         // Header label
         headerLabel.setText("Create Profile");

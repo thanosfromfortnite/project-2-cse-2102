@@ -16,12 +16,12 @@ public class GuiDeleteProfileMsg extends GuiBaseMessage implements ActionListene
 
         // Header label
         headerLabel.setText("Delete Profile");
-        headerLabel.setBounds(152, 20, 300, 50);
+        headerLabel.setBounds(150, 20, 300, 50);
         headerLabel.setFont(new Font("serif", Font.PLAIN, 35));
 
         // Successful deletion label
-        messageLabel.setText("Successfully deleted profile");
-        messageLabel.setBounds(185, 100, 150, 50);
+        messageLabel.setText("Profile Deleted!");
+        messageLabel.setBounds(175, 100, 300, 50);
         messageLabel.setFont(new Font("serif", Font.PLAIN, 20));
 
         // Display screen
