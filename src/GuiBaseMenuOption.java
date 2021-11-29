@@ -11,10 +11,10 @@ public class GuiBaseMenuOption extends JFrame implements ActionListener {
     JTextField adminIDTextField, lastNameTextField;
     JLabel headerLabel, adminIDLabel, lastNameLabel, errorLabel;
     GuiMainMenu menu;
-    String[] statusOptions = {"Active", "Inactive"};
-    String[] useOptions = {"Business", "Personal", "Both"};
+    String[] statusTypeOptions = {"Active", "Inactive"};
+    String[] useTypeOptions = {"Business", "Personal", "Both"};
     String[] vehicleTypeOptions = {"Sedan", "Hatchback", "Luxury", "Sport", "Other"};
-    String[] methodOptions = {"New", "Certified Pre-Owned", "Used", "Other"};
+    String[] methodTypeOptions = {"New", "Certified Pre-Owned", "Used", "Other"};
 
     // GuiBaseMenuOption constructor
     GuiBaseMenuOption(GuiMainMenu mainMenu) {

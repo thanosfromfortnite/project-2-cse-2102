@@ -1,10 +1,15 @@
+import java.util.Arrays;
+import java.util.HashSet;
 
 public class CustomerProf {
 	// fields
 	private String adminID, firstName, lastName, address, phone, status, use;
 	private VehicleInfo vehicleInfo;
 	private float income;
-	
+	// valid options for status and use
+	private HashSet<String> validStatusTypes = new HashSet<>(Arrays.asList("Active", "Inactive"));
+	private HashSet<String> validUseTypes = new HashSet<>(Arrays.asList("Business", "Personal", "Both"));
+
 	// constructor
 	public CustomerProf(String adminID, String firstName, String lastName, String address, String phone, String income, String status, String use, VehicleInfo vehicleInfo) {
 		this.adminID = adminID;

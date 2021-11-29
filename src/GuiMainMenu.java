@@ -55,7 +55,7 @@ public class GuiMainMenu extends JFrame implements ActionListener {
         buttons[4] = new JRadioButton("Display All Profiles");
         buttons[5] = new JRadioButton("Exit");
 
-        // Set values for menu option buttons
+        // Set properties for menu option buttons
         int yInc = 0;
         for (JRadioButton button : buttons) {
             button.setBounds(175, 100+yInc, 300, 40);
@@ -100,9 +100,11 @@ public class GuiMainMenu extends JFrame implements ActionListener {
                 this.setVisible(false);
                 // Display no profiles screen if customer list is empty, else open delete profile screen
                 if (db.getCustomerList().isEmpty()) {
-                    new GuiNoProfilesMsg(this);
+//                    new GuiNoProfilesMsg(this);
+                    new GuiNoProfilesMsg();
                 } else {
-                    new GuiDeleteProfile(this);
+//                    new GuiDeleteProfile(this);
+                    new GuiDeleteProfile();
                 }
                 break;
             case 2:
@@ -110,9 +112,11 @@ public class GuiMainMenu extends JFrame implements ActionListener {
                 this.setVisible(false);
                 // Display no profiles screen if customer list is empty, else open update profile screen
                 if (db.getCustomerList().isEmpty()) {
-                    new GuiNoProfilesMsg(this);
+//                    new GuiNoProfilesMsg(this);
+                    new GuiNoProfilesMsg();
                 } else {
-                    new GuiUpdateProfile(this);
+//                    new GuiUpdateProfile(this);
+                    new GuiUpdateProfile();
                 }
                 break;
             case 3:
@@ -120,9 +124,11 @@ public class GuiMainMenu extends JFrame implements ActionListener {
                 this.setVisible(false);
                 // Display no profiles screen if customer list is empty, else open find profile screen
                 if (db.getCustomerList().isEmpty()) {
-                    new GuiNoProfilesMsg(this);
+//                    new GuiNoProfilesMsg(this);
+                    new GuiNoProfilesMsg();
                 } else {
-                    new GuiFindProfile(this);
+//                    new GuiFindProfile(this);
+                    new GuiFindProfile();
                 }
                 break;
             case 4:
@@ -130,9 +136,11 @@ public class GuiMainMenu extends JFrame implements ActionListener {
                 this.setVisible(false);
                 // Display no profiles screen if customer list is empty, else open display all profiles screen
                 if (db.getCustomerList().isEmpty()) {
-                    new GuiNoProfilesMsg(this);
+//                    new GuiNoProfilesMsg(this);
+                    new GuiNoProfilesMsg();
                 } else {
-                    new GuiDisplayAllProfilesPrompt(this);
+//                    new GuiDisplayAllProfilesPrompt(this);
+                    new GuiDisplayAllProfilesPrompt();
                 }
                 break;
             case 5:

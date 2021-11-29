@@ -14,8 +14,8 @@ public class GuiExit extends GuiBaseMenuOption implements ActionListener {
 
         // Remove unneeded fields
         this.remove(adminIDLabel);
-        this.remove(lastNameLabel);
         this.remove(adminIDTextField);
+        this.remove(lastNameLabel);
         this.remove(lastNameTextField);
 
         // Set title
