@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 // Allows user to create a new customer profile
 public class GuiCreateProfile extends GuiBaseMenuOption implements ActionListener {
     // Combo boxes for status, use, vehicle type, and method
-    JComboBox<String> statusTypeCombo, useTypeCombo, vehicleTypeCombo, methodTypeCombo;
+    JComboBox<String> statusTypeDropdown, useTypeDropdown, vehicleTypeDropdown, methodTypeDropdown;
     // Labels for header and customer profile properties
     JLabel[] labels = new JLabel[13];
     // Text fields for customer profile properties that require typed input
@@ -84,28 +84,28 @@ public class GuiCreateProfile extends GuiBaseMenuOption implements ActionListene
         defaultBorder = textFields[0].getBorder();
 
         // Status type combo box
-        statusTypeCombo = new JComboBox<>(statusTypeOptions);
-        statusTypeCombo.setBounds(185, 303, 255, 32);
-        statusTypeCombo.setFont(new Font("serif", Font.PLAIN, 18));
-        statusTypeCombo.setAlignmentX((float) 0.5);
+        statusTypeDropdown = new JComboBox<>(statusTypeOptions);
+        statusTypeDropdown.setBounds(185, 303, 255, 32);
+        statusTypeDropdown.setFont(new Font("serif", Font.PLAIN, 18));
+        statusTypeDropdown.setAlignmentX((float) 0.5);
 
         // Use type combo box
-        useTypeCombo = new JComboBox<>(useTypeOptions);
-        useTypeCombo.setBounds(185, 268, 255, 32);
-        useTypeCombo.setFont(new Font("serif", Font.PLAIN, 18));
-        useTypeCombo.setAlignmentX((float) 0.5);
+        useTypeDropdown = new JComboBox<>(useTypeOptions);
+        useTypeDropdown.setBounds(185, 268, 255, 32);
+        useTypeDropdown.setFont(new Font("serif", Font.PLAIN, 18));
+        useTypeDropdown.setAlignmentX((float) 0.5);
 
         // Vehicle type combo box
-        vehicleTypeCombo = new JComboBox<>(vehicleTypeOptions);
-        vehicleTypeCombo.setBounds(185, 402, 255, 32);
-        vehicleTypeCombo.setFont(new Font("serif", Font.PLAIN, 18));
-        vehicleTypeCombo.setAlignmentX((float) 0.5);
+        vehicleTypeDropdown = new JComboBox<>(vehicleTypeOptions);
+        vehicleTypeDropdown.setBounds(185, 402, 255, 32);
+        vehicleTypeDropdown.setFont(new Font("serif", Font.PLAIN, 18));
+        vehicleTypeDropdown.setAlignmentX((float) 0.5);
 
         // Vehicle method type combo box
-        methodTypeCombo = new JComboBox<>(methodTypeOptions);
-        methodTypeCombo.setBounds(185, 435, 255, 32);
-        methodTypeCombo.setFont(new Font("serif", Font.PLAIN, 18));
-        methodTypeCombo.setAlignmentX((float) 0.5);
+        methodTypeDropdown = new JComboBox<>(methodTypeOptions);
+        methodTypeDropdown.setBounds(185, 435, 255, 32);
+        methodTypeDropdown.setFont(new Font("serif", Font.PLAIN, 18));
+        methodTypeDropdown.setAlignmentX((float) 0.5);
 
         // Error label
         errorLabel.setText("");
@@ -114,10 +114,10 @@ public class GuiCreateProfile extends GuiBaseMenuOption implements ActionListene
         errorLabel.setForeground(Color.red);
 
         // Add components
-        this.add(statusTypeCombo);
-        this.add(useTypeCombo);
-        this.add(vehicleTypeCombo);
-        this.add(methodTypeCombo);
+        this.add(statusTypeDropdown);
+        this.add(useTypeDropdown);
+        this.add(vehicleTypeDropdown);
+        this.add(methodTypeDropdown);
 
         // Set visible to true
         this.setVisible(true);
@@ -178,7 +178,7 @@ public class GuiCreateProfile extends GuiBaseMenuOption implements ActionListene
             checkIfEmpty(textFields[6]);
 
             // New vehicle information
-            VehicleInfo newVehicleInfo = new VehicleInfo(textFields[6].getText(), "0000", (String) vehicleTypeCombo.getSelectedItem(), (String) methodTypeCombo.getSelectedItem());
+            VehicleInfo newVehicleInfo = new VehicleInfo(textFields[6].getText(), "0000", (String) vehicleTypeDropdown.getSelectedItem(), (String) methodTypeDropdown.getSelectedItem());
 
             // Check if vehicle year is valid before setting
             if (textFields[7].getText().length() != 4) {
@@ -192,7 +192,7 @@ public class GuiCreateProfile extends GuiBaseMenuOption implements ActionListene
             }
 
             // New customer profile
-            CustomerProf newCustomerProf = new CustomerProf(textFields[0].getText(), textFields[1].getText(), textFields[2].getText(), textFields[3].getText(), "000-000-0000", 0, (String) statusTypeCombo.getSelectedItem(), (String) useTypeCombo.getSelectedItem(), newVehicleInfo);
+            CustomerProf newCustomerProf = new CustomerProf(textFields[0].getText(), textFields[1].getText(), textFields[2].getText(), textFields[3].getText(), "000-000-0000", 0, (String) statusTypeDropdown.getSelectedItem(), (String) useTypeDropdown.getSelectedItem(), newVehicleInfo);
 
             // Check if phone number is valid before setting
             if (textFields[4].getText().length() != 10) {

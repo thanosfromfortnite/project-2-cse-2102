@@ -114,8 +114,7 @@ public class GuiMainMenu extends JFrame implements ActionListener {
                 if (db.getCustomerList().isEmpty()) {
                     new GuiNoProfilesMsg(this);
                 } else {
-//                    new GuiUpdateProfile(this);
-                    new GuiUpdateProfile();
+                    new GuiUpdateProfile(this);
                 }
                 break;
             case 3:

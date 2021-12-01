@@ -25,7 +25,7 @@ public class GuiNoProfilesMsg extends GuiBaseMessage implements ActionListener {
         try {
             // Initialize empty db
             db.initializeDB("src/empty.txt");
-            // Create new no profiles screen
+            // Create new no profiles message screen
             new GuiNoProfilesMsg(new GuiMainMenu(db));
         } catch (FileNotFoundException e) {
             // Catch exception and display file not found

@@ -71,7 +71,7 @@ public class GuiExit extends GuiBaseMenuOption implements ActionListener {
         try {
             // Initialize database
             db.initializeDB("src/customers.txt");
-            // Create new exit
+            // Create new exit screen
             new GuiExit(new GuiMainMenu(db));
         } catch (FileNotFoundException e) {
             // Catch file not found exception and print message to user

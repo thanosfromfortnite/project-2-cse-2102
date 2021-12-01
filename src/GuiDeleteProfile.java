@@ -32,7 +32,7 @@ public class GuiDeleteProfile extends GuiBaseMenuOption implements ActionListene
         try {
             // Initialize db
             db.initializeDB("src/customers.txt");
-            // Create new no profiles screen
+            // Create new delete profile screen
             new GuiDeleteProfile(new GuiMainMenu(db));
         } catch (FileNotFoundException e) {
             // Catch exception and display file not found
