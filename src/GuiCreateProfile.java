@@ -205,12 +205,12 @@ public class GuiCreateProfile extends GuiBaseMenuOption implements ActionListene
                 newCustomerProf.updatePhone(textFields[4].getText());
             }
 
-            // Try to update income, display error label if input is not a float
+            // Try to update income, display error label if input is not a float or negative
             try {
                 newCustomerProf.updateIncome(Float.parseFloat(textFields[5].getText()));
             } catch (Exception e){
                 hasErrors = true;
-                errorLabel.setText(errorLabel.getText() + "* Income must be a float<br>");
+                errorLabel.setText(errorLabel.getText() + "* Income must be a positive float<br>");
                 textFields[5].setBorder(new LineBorder(Color.red, 1));
                 this.add(errorLabel);
                 this.repaint();
