@@ -26,14 +26,18 @@ public class CustomerProfDB {
     }
 
     // Checks if a customer profile exists for the admin ID
-    public boolean existsProfile(String adminID) {
+    public boolean existsMoreThanOne(String adminID) {
         boolean exists = false;
+        int count = 0;
         // Loop through customer profiles
         for (CustomerProf customerProf : profiles) {
             // If profile matches admin ID, return true
             if (customerProf.getAdminID().equals(adminID)) {
-                exists = true;
-                break;
+                count++;
+                if (count > 1) {
+                    exists = true;
+                    break;
+                }
             }
         }
         return exists;
