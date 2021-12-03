@@ -83,6 +83,9 @@ public class CustomerProf {
 		use = str;
 	}
 	public void updateIncome(float newIncome) {
+		if (newIncome < 0) {
+			throw new IllegalArgumentException();
+		}
 		income = newIncome;
 	}
 	public void updateStatus(String str) {
