@@ -20,7 +20,7 @@ public class GuiDisplayAllProfiles extends GuiDisplayProfile implements ActionLi
         id = adminID;
 
         // Add next button and move close button if more than one customer profile exists
-        if (mainMenu.db.existsProfile(id)) {
+        if (mainMenu.db.existsMoreThanOne(id)) {
             // Next profile button
             nextButton = new JButton("Next Profile");
             nextButton.setBounds(275, 520, 150, 40);
