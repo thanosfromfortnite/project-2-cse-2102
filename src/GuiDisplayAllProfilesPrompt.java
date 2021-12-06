@@ -27,9 +27,9 @@ public class GuiDisplayAllProfilesPrompt extends GuiBaseMenuOption implements Ac
 
     @Override
     public void actionHandler() {
-        CustomerProf firstProf = menu.db.findFirstProfile();
+        CustomerProf firstProf = menu.db.findFirstProfile(adminIDTextField.getText());
         while (!firstProf.getAdminID().equals(adminIDTextField.getText())) {
-            firstProf = menu.db.findNextProfile();
+            firstProf = menu.db.findNextProfile(adminIDTextField.getText());
         }
         new GuiDisplayAllProfiles(menu, firstProf, adminIDTextField.getText());
     }

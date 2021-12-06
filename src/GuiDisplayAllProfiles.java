@@ -53,9 +53,9 @@ public class GuiDisplayAllProfiles extends GuiDisplayProfile implements ActionLi
         if (e.getSource() == nextButton) {
             try {
                 // Set current profile to next profile under the admin ID
-                CustomerProf currentProf = menu.db.findNextProfile();
+                CustomerProf currentProf = menu.db.findNextProfile(id);
                 while (currentProf != null && !currentProf.getAdminID().equals(id)) {
-                    currentProf = menu.db.findNextProfile();
+                    currentProf = menu.db.findNextProfile(id);
                 }
                 // Get customer profile information
                 String[] values = {currentProf.getAdminID(), currentProf.getFirstName(), currentProf.getLastName(), currentProf.getAddress(), currentProf.getPhone(),
@@ -86,7 +86,7 @@ public class GuiDisplayAllProfiles extends GuiDisplayProfile implements ActionLi
             // Initialize db
             db.initializeDB("src/customers.txt");
             // Create new display all profiles screen
-            new GuiDisplayAllProfiles(new GuiMainMenu(db), db.findFirstProfile(), "PA1");
+            new GuiDisplayAllProfiles(new GuiMainMenu(db), db.findFirstProfile("PA1"), "PA1");
         } catch (FileNotFoundException e) {
             // Catch exception and display file not found
             System.out.println("File not found");

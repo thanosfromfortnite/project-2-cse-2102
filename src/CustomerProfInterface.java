@@ -313,12 +313,19 @@ public class CustomerProfInterface {
         String adminID = scan.nextLine();
         
         
-        CustomerProf current = database.findNextProfile();
-        while (current != null) {
-            if (current.getAdminID().equals(adminID)) {
-                displayCustomerProf(current);
+        CustomerProf current = database.findNextProfile(adminID);
+        if (database.getCustomerList().isEmpty()) {
+            System.out.println("No profiles to display.");
+            return;
+        }
+        if (!database.existsMoreThanOne(adminID)) {
+            System.out.println("No patients found for " + adminID + ".");
+            return;
+        }
+        for (CustomerProf i : database.getCustomerList()) {
+            if (i.getAdminID().equals(adminID)) {
+                displayCustomerProf(i);
             }
-            current = database.findNextProfile();
         }
         
     }
