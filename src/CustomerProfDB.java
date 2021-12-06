@@ -101,26 +101,27 @@ public class CustomerProfDB {
         }
     }
 
-    public CustomerProf findFirstProfile() {
-        if (profiles.isEmpty()) {
-            return null;
+    public CustomerProf findFirstProfile(String adminID) {
+        // Iterate through list of customer profiles and return first profile that matches adminID input
+        for (CustomerProf i : profiles) {
+            if (i.getAdminID().equals(adminID)) {
+                profileCounter = profiles.indexOf(i);
+                return i;
+            }
         }
-
-        return profiles.get(0);
+        // Throw error if profile cannot be found
+        throw new IllegalArgumentException("Customer profile not found.");
     }
 
-    public CustomerProf findNextProfile() {
-        if (profiles.isEmpty()) {
-            return null;
+    public CustomerProf findNextProfile(String adminID) {
+        profileCounter++;
+        for (int i = profileCounter; i < numCustomers; i++) {
+            if (profiles.get(i).getAdminID().equals(adminID)) {
+                profileCounter = i;
+                return profiles.get(profileCounter);
+            }
         }
-        if (profileCounter < numCustomers) { // as long as there are still profiles, iterate through, otherwise return null
-            CustomerProf output = profiles.get(profileCounter);
-            profileCounter ++;
-            return output;
-        }
-        profileCounter = 0; // this happens when the end is reached, and at that point, reset the counter
-        System.out.println("Reached the end of the list.");
-        return null;
+        throw new IllegalArgumentException("Customer profile not found.");
     }
 
     public void writeAllCustomerProf() throws IOException {

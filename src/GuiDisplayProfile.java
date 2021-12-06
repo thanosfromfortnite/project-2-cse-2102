@@ -75,7 +75,7 @@ public class GuiDisplayProfile extends GuiBaseMenuOption implements ActionListen
             // Initialize db
             db.initializeDB("src/customers.txt");
             // Create new display profile screen
-            new GuiDisplayProfile(new GuiMainMenu(db), db.findFirstProfile());
+            new GuiDisplayProfile(new GuiMainMenu(db), db.findFirstProfile("PA1"));
         } catch (FileNotFoundException e) {
             // Catch exception and display file not found
             System.out.println("File not found");
