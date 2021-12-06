@@ -67,12 +67,11 @@ public class CustomerProfDB {
     						vars[10], // type
     						vars[11]) // method
     				);
-    		if (findProfile(newCustomer.getAdminID(), newCustomer.getLastName()) == null) { // if profile does not exist
-    			insertNewProfile(newCustomer);
-    		}
-    		else {
-    			// do nothing
-    		}
+            try {
+                CustomerProf existingProf = findProfile(newCustomer.getAdminID(), newCustomer.getLastName());
+            } catch (IllegalArgumentException e) {
+                insertNewProfile(newCustomer);
+            }
     	}
     }
 
@@ -87,7 +86,7 @@ public class CustomerProfDB {
                 return i;
             }
         }
-        return null;
+        throw new IllegalArgumentException("Customer profile does not exist.");
     }
 
     public boolean deleteProfile(String adminID, String lastName) {
